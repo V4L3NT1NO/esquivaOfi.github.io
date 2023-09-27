@@ -159,6 +159,15 @@ addEventListener('click', (mouse) =>{
     proyectiles.push(new Proyectil(canvas.width / 2,canvas.height / 2,8,'white',velocidad));
 
 } );
+addEventListener('touchstart', (mouse) =>{
+    const angle = Math.atan2(mouse.clientY - window.innerHeight / 2,mouse.clientX - window.innerWidth / 2);
+    const velocidad ={
+        x: Math.cos(angle),
+        y: Math.sin(angle)
+    }
+    proyectiles.push(new Proyectil(canvas.width / 2,canvas.height / 2,8,'white',velocidad));
+
+} );
 
 
 function crearEnemigos(){
